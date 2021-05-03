@@ -1,0 +1,624 @@
+{
+  "format_version": "0.1",
+  "terraform_version": "0.13.5",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "aws_ebs_volume.test-instance-volume-1",
+          "mode": "managed",
+          "type": "aws_ebs_volume",
+          "name": "test-instance-volume-1",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "arn": "arn:aws:ec2:eu-west-1:999999999999:volume/vol-050000000000000d",
+            "availability_zone": "eu-west-1a",
+            "encrypted": true,
+            "id": "vol-050000000000000d",
+            "iops": 1350,
+            "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+            "multi_attach_enabled": false,
+            "outpost_arn": "",
+            "size": 450,
+            "snapshot_id": "",
+            "tags": {},
+            "type": "gp2"
+          }
+        },
+        {
+          "address": "aws_instance.test-instance",
+          "mode": "managed",
+          "type": "aws_instance",
+          "name": "test-instance",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 1,
+          "values": {
+            "ami": "ami-0d0d0d0d0d0d00d0",
+            "arn": "arn:aws:ec2:eu-west-1:999999999999:instance/i-0e00000000000078",
+            "associate_public_ip_address": false,
+            "availability_zone": "eu-west-1a",
+            "cpu_core_count": 2,
+            "cpu_threads_per_core": 2,
+            "credit_specification": [],
+            "disable_api_termination": false,
+            "ebs_block_device": [
+              {
+                "delete_on_termination": false,
+                "device_name": "/dev/sdf",
+                "encrypted": true,
+                "iops": 1350,
+                "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+                "snapshot_id": "",
+                "volume_id": "vol-050000000000000d",
+                "volume_size": 450,
+                "volume_type": "gp2"
+              }
+            ],
+            "ebs_optimized": true,
+            "ephemeral_block_device": [],
+            "get_password_data": false,
+            "hibernation": false,
+            "host_id": null,
+            "id": "i-0e00000000000078",
+            "instance_initiated_shutdown_behavior": null,
+            "instance_state": "running",
+            "instance_type": "m5.xlarge",
+            "ipv6_address_count": 0,
+            "ipv6_addresses": [],
+            "key_name": "its-a-key-4-me",
+            "metadata_options": [
+              {
+                "http_endpoint": "enabled",
+                "http_put_response_hop_limit": 1,
+                "http_tokens": "optional"
+              }
+            ],
+            "monitoring": true,
+            "network_interface": [],
+            "network_interface_id": null,
+            "outpost_arn": "",
+            "password_data": "",
+            "placement_group": "",
+            "public_dns": "",
+            "public_ip": "",
+            "root_block_device": [
+              {
+                "delete_on_termination": false,
+                "device_name": "/dev/sda1",
+                "encrypted": true,
+                "iops": 225,
+                "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+                "volume_id": "vol-01d3d4g5j6k7l8l84d",
+                "volume_size": 75,
+                "volume_type": "gp2"
+              }
+            ],
+            "security_groups": [],
+            "source_dest_check": true,
+
+            "tags": {},
+            "tenancy": "default",
+            "timeouts": null,
+            "user_data": null,
+            "user_data_base64": null,
+            "volume_tags": {}
+          }
+        },
+        {
+          "address": "aws_volume_attachment.test-instance-volume-1",
+          "mode": "managed",
+          "type": "aws_volume_attachment",
+          "name": "test-instance-volume-1",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "device_name": "/dev/sdf",
+            "force_detach": null,
+            "id": "vai-1010101010",
+            "instance_id": "i-0e00000000000078",
+            "skip_destroy": null,
+            "volume_id": "vol-050000000000000d"
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "aws_ebs_volume.test-instance-volume-1",
+      "mode": "managed",
+      "type": "aws_ebs_volume",
+      "name": "test-instance-volume-1",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["no-op"],
+        "before": {
+          "arn": "arn:aws:ec2:eu-west-1:999999999999:volume/vol-050000000000000d",
+          "availability_zone": "eu-west-1a",
+          "encrypted": true,
+          "id": "vol-050000000000000d",
+          "iops": 1350,
+          "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+          "multi_attach_enabled": false,
+          "outpost_arn": "",
+          "size": 450,
+          "snapshot_id": "",
+          "tags": {},
+          "type": "gp2"
+        },
+        "after": {
+          "arn": "arn:aws:ec2:eu-west-1:999999999999:volume/vol-050000000000000d",
+          "availability_zone": "eu-west-1a",
+          "encrypted": true,
+          "id": "vol-050000000000000d",
+          "iops": 1350,
+          "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+          "multi_attach_enabled": false,
+          "outpost_arn": "",
+          "size": 450,
+          "snapshot_id": "",
+          "tags": {},
+          "type": "gp2"
+        },
+        "after_unknown": {}
+      }
+    },
+    {
+      "address": "aws_instance.test-instance",
+      "mode": "managed",
+      "type": "aws_instance",
+      "name": "test-instance",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["no-op"],
+        "before": {
+          "ami": "ami-0d0d0d0d0d0d00d0",
+          "arn": "arn:aws:ec2:eu-west-1:999999999999:instance/i-0e00000000000078",
+          "associate_public_ip_address": false,
+          "availability_zone": "eu-west-1a",
+          "cpu_core_count": 2,
+          "cpu_threads_per_core": 2,
+          "credit_specification": [],
+          "disable_api_termination": false,
+          "ebs_block_device": [
+            {
+              "delete_on_termination": false,
+              "device_name": "/dev/sdf",
+              "encrypted": true,
+              "iops": 1350,
+              "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+              "snapshot_id": "",
+              "volume_id": "vol-050000000000000d",
+              "volume_size": 450,
+              "volume_type": "gp2"
+            }
+          ],
+          "ebs_optimized": true,
+          "ephemeral_block_device": [],
+          "get_password_data": false,
+          "hibernation": false,
+          "host_id": null,
+          "id": "i-0e00000000000078",
+          "instance_initiated_shutdown_behavior": null,
+          "instance_state": "running",
+          "instance_type": "m5.xlarge",
+          "ipv6_address_count": 0,
+          "ipv6_addresses": [],
+          "key_name": "its-a-key-4-me",
+          "metadata_options": [
+            {
+              "http_endpoint": "enabled",
+              "http_put_response_hop_limit": 1,
+              "http_tokens": "optional"
+            }
+          ],
+          "monitoring": true,
+          "network_interface": [],
+          "network_interface_id": null,
+          "outpost_arn": "",
+          "password_data": "",
+          "placement_group": "",
+
+          "public_dns": "",
+          "public_ip": "",
+          "root_block_device": [
+            {
+              "delete_on_termination": false,
+              "device_name": "/dev/sda1",
+              "encrypted": true,
+              "iops": 225,
+              "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+              "volume_id": "vol-01d3d4g5j6k7l8l84d",
+              "volume_size": 75,
+              "volume_type": "gp2"
+            }
+          ],
+          "security_groups": [],
+          "source_dest_check": true,
+
+          "tags": {},
+          "tenancy": "default",
+          "timeouts": null,
+          "user_data": null,
+          "user_data_base64": null,
+          "volume_tags": {}
+        },
+        "after": {
+          "ami": "ami-0d0d0d0d0d0d00d0",
+          "arn": "arn:aws:ec2:eu-west-1:999999999999:instance/i-0e00000000000078",
+          "associate_public_ip_address": false,
+          "availability_zone": "eu-west-1a",
+          "cpu_core_count": 2,
+          "cpu_threads_per_core": 2,
+          "credit_specification": [],
+          "disable_api_termination": false,
+          "ebs_block_device": [
+            {
+              "delete_on_termination": false,
+              "device_name": "/dev/sdf",
+              "encrypted": true,
+              "iops": 1350,
+              "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+              "snapshot_id": "",
+              "volume_id": "vol-050000000000000d",
+              "volume_size": 450,
+              "volume_type": "gp2"
+            }
+          ],
+          "ebs_optimized": true,
+          "ephemeral_block_device": [],
+          "get_password_data": false,
+          "hibernation": false,
+          "host_id": null,
+          "id": "i-0e00000000000078",
+          "instance_initiated_shutdown_behavior": null,
+          "instance_state": "running",
+          "instance_type": "m5.xlarge",
+          "ipv6_address_count": 0,
+          "ipv6_addresses": [],
+          "key_name": "its-a-key-4-me",
+          "metadata_options": [
+            {
+              "http_endpoint": "enabled",
+              "http_put_response_hop_limit": 1,
+              "http_tokens": "optional"
+            }
+          ],
+          "monitoring": true,
+          "network_interface": [],
+          "network_interface_id": null,
+          "outpost_arn": "",
+          "password_data": "",
+          "placement_group": "",
+
+          "public_dns": "",
+          "public_ip": "",
+          "root_block_device": [
+            {
+              "delete_on_termination": false,
+              "device_name": "/dev/sda1",
+              "encrypted": true,
+              "iops": 225,
+              "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+              "volume_id": "vol-01d3d4g5j6k7l8l84d",
+              "volume_size": 75,
+              "volume_type": "gp2"
+            }
+          ],
+          "security_groups": [],
+          "source_dest_check": true,
+
+          "tags": {},
+          "tenancy": "default",
+          "timeouts": null,
+          "user_data": null,
+          "user_data_base64": null,
+          "volume_tags": {}
+        },
+        "after_unknown": {}
+      }
+    },
+    {
+      "address": "aws_volume_attachment.test-instance-volume-1",
+      "mode": "managed",
+      "type": "aws_volume_attachment",
+      "name": "test-instance-volume-1",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["no-op"],
+        "before": {
+          "device_name": "/dev/sdf",
+          "force_detach": null,
+          "id": "vai-1010101010",
+          "instance_id": "i-0e00000000000078",
+          "skip_destroy": null,
+          "volume_id": "vol-050000000000000d"
+        },
+        "after": {
+          "device_name": "/dev/sdf",
+          "force_detach": null,
+          "id": "vai-1010101010",
+          "instance_id": "i-0e00000000000078",
+          "skip_destroy": null,
+          "volume_id": "vol-050000000000000d"
+        },
+        "after_unknown": {}
+      }
+    }
+  ],
+  "prior_state": {
+    "format_version": "0.1",
+    "terraform_version": "0.13.5",
+    "values": {
+      "root_module": {
+        "resources": [
+          {
+            "address": "aws_ebs_volume.test-instance-volume-1",
+            "mode": "managed",
+            "type": "aws_ebs_volume",
+            "name": "test-instance-volume-1",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "schema_version": 0,
+            "values": {
+              "arn": "arn:aws:ec2:eu-west-1:999999999999:volume/vol-050000000000000d",
+              "availability_zone": "eu-west-1a",
+              "encrypted": true,
+              "id": "vol-050000000000000d",
+              "iops": 1350,
+              "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+              "multi_attach_enabled": false,
+              "outpost_arn": "",
+              "size": 450,
+              "snapshot_id": "",
+              "tags": {},
+              "type": "gp2"
+            },
+            "depends_on": [
+              "data.aws_availability_zone.az2",
+              "data.aws_kms_key.arn"
+            ]
+          },
+          {
+            "address": "aws_instance.test-instance",
+            "mode": "managed",
+            "type": "aws_instance",
+            "name": "test-instance",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "schema_version": 1,
+            "values": {
+              "ami": "ami-0d0d0d0d0d0d00d0",
+              "arn": "arn:aws:ec2:eu-west-1:999999999999:instance/i-0e00000000000078",
+              "associate_public_ip_address": false,
+              "availability_zone": "eu-west-1a",
+              "cpu_core_count": 2,
+              "cpu_threads_per_core": 2,
+              "credit_specification": [],
+              "disable_api_termination": false,
+              "ebs_block_device": [
+                {
+                  "delete_on_termination": false,
+                  "device_name": "/dev/sdf",
+                  "encrypted": true,
+                  "iops": 1350,
+                  "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+                  "snapshot_id": "",
+                  "volume_id": "vol-050000000000000d",
+                  "volume_size": 450,
+                  "volume_type": "gp2"
+                }
+              ],
+              "ebs_optimized": true,
+              "ephemeral_block_device": [],
+              "get_password_data": false,
+              "hibernation": false,
+              "host_id": null,
+              "id": "i-0e00000000000078",
+              "instance_initiated_shutdown_behavior": null,
+              "instance_state": "running",
+              "instance_type": "m5.xlarge",
+              "ipv6_address_count": 0,
+              "ipv6_addresses": [],
+              "key_name": "its-a-key-4-me",
+              "metadata_options": [
+                {
+                  "http_endpoint": "enabled",
+                  "http_put_response_hop_limit": 1,
+                  "http_tokens": "optional"
+                }
+              ],
+              "monitoring": true,
+              "network_interface": [],
+              "network_interface_id": null,
+              "outpost_arn": "",
+              "password_data": "",
+              "placement_group": "",
+
+              "public_dns": "",
+              "public_ip": "",
+              "root_block_device": [
+                {
+                  "delete_on_termination": false,
+                  "device_name": "/dev/sda1",
+                  "encrypted": true,
+                  "iops": 225,
+                  "kms_key_id": "arn:aws:kms:eu-west-1:999999999999:key/5abe738c-0000-447a-0000-10000000004",
+                  "volume_id": "vol-01d3d4g5j6k7l8l84d",
+                  "volume_size": 75,
+                  "volume_type": "gp2"
+                }
+              ],
+              "security_groups": [],
+              "source_dest_check": true,
+              "tags": {},
+              "tenancy": "default",
+              "timeouts": null,
+              "user_data": null,
+              "user_data_base64": null,
+              "volume_tags": {}
+            },
+            "depends_on": []
+          },
+          {
+            "address": "aws_volume_attachment.test-instance-volume-1",
+            "mode": "managed",
+            "type": "aws_volume_attachment",
+            "name": "test-instance-volume-1",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "schema_version": 0,
+            "values": {
+              "device_name": "/dev/sdf",
+              "force_detach": null,
+              "id": "vai-1010101010",
+              "instance_id": "i-0e00000000000078",
+              "skip_destroy": null,
+              "volume_id": "vol-050000000000000d"
+            },
+            "depends_on": [
+              "aws_ebs_volume.test-instance-volume-1",
+              "aws_instance.test-instance"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "aws": {
+        "name": "aws",
+        "version_constraint": "2.63.0",
+        "expressions": {
+          "region": {
+            "references": ["var.aws-region"]
+          }
+        }
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "aws_ebs_volume.test-instance-volume-1",
+          "mode": "managed",
+          "type": "aws_ebs_volume",
+          "name": "test-instance-volume-1",
+          "provider_config_key": "aws",
+          "expressions": {
+            "availability_zone": {
+              "references": ["data.aws_availability_zone.az2"]
+            },
+            "encrypted": {
+              "constant_value": true
+            },
+            "kms_key_id": {
+              "references": ["data.aws_kms_key.arn"]
+            },
+            "size": {
+              "constant_value": 450
+            },
+            "tags": {
+              "references": [
+                "var.mandatory_tags",
+                "local.test-instance_common_tags"
+              ]
+            },
+            "type": {
+              "constant_value": "gp2"
+            }
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "aws_instance.test-instance",
+          "mode": "managed",
+          "type": "aws_instance",
+          "name": "test-instance",
+          "provider_config_key": "aws",
+          "expressions": {
+            "ami": {
+              "references": ["var.ami_win"]
+            },
+            "associate_public_ip_address": {
+              "constant_value": false
+            },
+            "availability_zone": {
+              "references": ["data.aws_availability_zone.az2"]
+            },
+            "ebs_optimized": {
+              "constant_value": true
+            },
+            "iam_instance_profile": {
+              "references": ["var.ssm_name"]
+            },
+            "instance_type": {
+              "references": ["var.type_win_bods"]
+            },
+            "key_name": {
+              "references": ["var.keypair_name"]
+            },
+            "monitoring": {
+              "constant_value": true
+            },
+            "root_block_device": [
+              {
+                "delete_on_termination": {
+                  "constant_value": false
+                },
+                "encrypted": {
+                  "constant_value": true
+                },
+                "kms_key_id": {
+                  "references": ["data.aws_kms_key.arn"]
+                },
+                "volume_size": {
+                  "constant_value": 75
+                },
+                "volume_type": {
+                  "constant_value": "gp2"
+                }
+              }
+            ],
+            "subnet_id": {
+              "references": ["data.aws_subnet.private_b"]
+            },
+            "tags": {
+              "references": [
+                "var.mandatory_tags",
+                "local.test-instance_common_tags"
+              ]
+            },
+            "volume_tags": {
+              "references": [
+                "var.mandatory_tags",
+                "local.test-instance_common_tags"
+              ]
+            },
+            "vpc_security_group_ids": {
+              "references": []
+            }
+          },
+          "schema_version": 1
+        },
+        {
+          "address": "aws_volume_attachment.test-instance-volume-1",
+          "mode": "managed",
+          "type": "aws_volume_attachment",
+          "name": "test-instance-volume-1",
+          "provider_config_key": "aws",
+          "expressions": {
+            "device_name": {
+              "constant_value": "/dev/sdf"
+            },
+            "instance_id": {
+              "references": ["aws_instance.test-instance"]
+            },
+            "volume_id": {
+              "references": ["aws_ebs_volume.test-instance-volume-1"]
+            }
+          },
+          "schema_version": 0
+        }
+      ]
+    }
+  }
+}

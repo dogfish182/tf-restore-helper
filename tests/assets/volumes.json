@@ -1,0 +1,39 @@
+[
+  {
+    "Attachments": [
+      {
+        "AttachTime": "just after lunch",
+        "DeleteOnTermination": false,
+        "Device": "/dev/sdf",
+        "InstanceId": "i-0e00000000000078",
+        "State": "attached",
+        "VolumeId": "vol-0000000000000001"
+      }
+    ],
+    "AvailabilityZone": "eu-west-1a",
+    "CreateTime": "long ago in a land far away",
+    "Encrypted": true,
+    "Iops": 1350,
+    "MultiAttachEnabled": false,
+    "Size": 450,
+    "SnapshotId": "",
+    "State": "in-use",
+    "Tags": [],
+    "VolumeId": "vol-0000000000000001",
+    "VolumeType": "gp2"
+  },
+  {
+    "Attachments": [],
+    "AvailabilityZone": "eu-west-1a",
+    "CreateTime": "long ago in a land far away",
+    "Encrypted": true,
+    "Iops": 1350,
+    "MultiAttachEnabled": false,
+    "Size": 450,
+    "SnapshotId": "",
+    "State": "in-use",
+    "Tags": [],
+    "VolumeId": "vol-0000000000000002",
+    "VolumeType": "gp2"
+  }
+]

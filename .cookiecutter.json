@@ -1,0 +1,11 @@
+{
+  "_template": "git@github.com:cjolowicz/cookiecutter-hypermodern-python.git",
+  "author": "Gary Hawker",
+  "email": "dogfish@gmail.com",
+  "friendly_name": "Tf Restore Helper",
+  "github_user": "dogfish182",
+  "license": "MIT",
+  "package_name": "tf_restore_helper",
+  "project_name": "tf-restore-helper",
+  "version": "0.0.0"
+}
