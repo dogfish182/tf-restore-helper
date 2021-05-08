@@ -61,7 +61,7 @@ Examples of usage:
 
 .. code:: console
 
-   > post-restore-tf --planfile tests/assets/plan.json
+   > tf-restore-helper --planfile tests/assets/plan.json
     2021-05-03 13:28:43 sbpltc1nplvdl botocore.credentials[79705] INFO Found credentials in environment variables.
     2021-05-03 13:28:46 sbpltc1nplvdl postrestoretfcli[79705]   WARNING THIS INFORMATION SHOULD BE USED ONLY IF YOU KNOW WHAT YOU ARE DOING!
     -----------Terraform volume alignment commands-----------
