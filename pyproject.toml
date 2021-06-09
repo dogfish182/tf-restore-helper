@@ -20,7 +20,7 @@ Changelog = "https://github.com/dogfish182/tf-restore-helper/releases"
 
 [tool.poetry.dependencies]
 python = "^3.7.0"
-click = "^7.0"
+click = ">=7,<9"
 click-logging = "~1.0"
 coloredlogs = "~15.0"
 boto3 = "~1.17"
