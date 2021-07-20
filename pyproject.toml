@@ -23,7 +23,7 @@ python = "^3.7.0"
 click = ">=7,<9"
 click-logging = "~1.0"
 coloredlogs = "~15.0"
-boto3 = "~1.17"
+boto3 = ">=1.17,<1.19"
 flatplan = "~1.3"
 
 
