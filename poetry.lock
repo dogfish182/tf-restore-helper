@@ -554,7 +554,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "moto"
-version = "2.0.8"
+version = "2.2.8"
 description = "A library that allows your python tests to easily mock out the boto library"
 category = "dev"
 optional = false
@@ -564,6 +564,7 @@ python-versions = "*"
 boto3 = ">=1.9.201"
 botocore = ">=1.12.201"
 cryptography = ">=3.3.1"
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 Jinja2 = ">=2.10.1"
 MarkupSafe = "!=2.0.0a1"
 more-itertools = "*"
@@ -571,28 +572,25 @@ python-dateutil = ">=2.1,<3.0.0"
 pytz = "*"
 requests = ">=2.5"
 responses = ">=0.9.0"
-six = ">1.9"
 werkzeug = "*"
 xmltodict = "*"
 
 [package.extras]
-all = ["PyYAML (>=5.1)", "python-jose[cryptography] (>=3.1.0,<4.0.0)", "ecdsa (<0.15)", "docker (>=2.5.1)", "jsondiff (>=1.1.2)", "aws-xray-sdk (>=0.93,!=0.96)", "idna (>=2.5,<3)", "cfn-lint (>=0.4.0)", "decorator (<=4.4.2)", "sshpubkeys (==3.1.0)", "sshpubkeys (>=3.1.0)"]
+all = ["PyYAML (>=5.1)", "python-jose[cryptography] (>=3.1.0,<4.0.0)", "ecdsa (<0.15)", "docker (>=2.5.1)", "jsondiff (>=1.1.2)", "aws-xray-sdk (>=0.93,!=0.96)", "idna (>=2.5,<3)", "cfn-lint (>=0.4.0)", "sshpubkeys (>=3.1.0)", "setuptools"]
 apigateway = ["python-jose[cryptography] (>=3.1.0,<4.0.0)", "ecdsa (<0.15)"]
 awslambda = ["docker (>=2.5.1)"]
 batch = ["docker (>=2.5.1)"]
-cloudformation = ["docker (>=2.5.1)", "PyYAML (>=5.1)", "cfn-lint (>=0.4.0)", "decorator (<=4.4.2)"]
+cloudformation = ["docker (>=2.5.1)", "PyYAML (>=5.1)", "cfn-lint (>=0.4.0)"]
 cognitoidp = ["python-jose[cryptography] (>=3.1.0,<4.0.0)", "ecdsa (<0.15)"]
 dynamodb2 = ["docker (>=2.5.1)"]
 dynamodbstreams = ["docker (>=2.5.1)"]
-ec2 = ["docker (>=2.5.1)", "sshpubkeys (==3.1.0)", "sshpubkeys (>=3.1.0)"]
+ec2 = ["sshpubkeys (>=3.1.0)"]
+efs = ["sshpubkeys (>=3.1.0)"]
 iotdata = ["jsondiff (>=1.1.2)"]
 s3 = ["PyYAML (>=5.1)"]
-server = ["PyYAML (>=5.1)", "python-jose[cryptography] (>=3.1.0,<4.0.0)", "ecdsa (<0.15)", "docker (>=2.5.1)", "jsondiff (>=1.1.2)", "aws-xray-sdk (>=0.93,!=0.96)", "idna (>=2.5,<3)", "cfn-lint (>=0.4.0)", "flask", "flask-cors", "decorator (<=4.4.2)", "sshpubkeys (==3.1.0)", "sshpubkeys (>=3.1.0)"]
-ses = ["docker (>=2.5.1)"]
-sns = ["docker (>=2.5.1)"]
-sqs = ["docker (>=2.5.1)"]
-ssm = ["docker (>=2.5.1)", "PyYAML (>=5.1)", "cfn-lint (>=0.4.0)", "decorator (<=4.4.2)"]
-xray = ["aws-xray-sdk (>=0.93,!=0.96)"]
+server = ["PyYAML (>=5.1)", "python-jose[cryptography] (>=3.1.0,<4.0.0)", "ecdsa (<0.15)", "docker (>=2.5.1)", "jsondiff (>=1.1.2)", "aws-xray-sdk (>=0.93,!=0.96)", "idna (>=2.5,<3)", "cfn-lint (>=0.4.0)", "sshpubkeys (>=3.1.0)", "setuptools", "flask", "flask-cors"]
+ssm = ["PyYAML (>=5.1)", "dataclasses"]
+xray = ["aws-xray-sdk (>=0.93,!=0.96)", "setuptools"]
 
 [[package]]
 name = "mypy"
@@ -1261,7 +1259,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.0"
-content-hash = "534feff3cee5a76533f83a8b7d245eb05294bf30214d81c3b4e0c6ac988daf89"
+content-hash = "14ea853b63d80f92cb865443267101867266fed0bc48b1c5db09e5f82d71d90a"
 
 [metadata.files]
 alabaster = [
@@ -1615,8 +1613,8 @@ more-itertools = [
     {file = "more_itertools-8.7.0-py3-none-any.whl", hash = "sha256:5652a9ac72209ed7df8d9c15daf4e1aa0e3d2ccd3c87f8265a0673cd9cbc9ced"},
 ]
 moto = [
-    {file = "moto-2.0.8-py2.py3-none-any.whl", hash = "sha256:b5b4c596d6f44fe1f658429d0313a649d0861d7df91b2dbdb5cc20d1bb8daf39"},
-    {file = "moto-2.0.8.tar.gz", hash = "sha256:812dcfdb460e6d43236f2c0f7774ede038716daef6db8a09dc5c16ea7e4de931"},
+    {file = "moto-2.2.8-py2.py3-none-any.whl", hash = "sha256:ee745c018f3b279a06bf156c844c82a202ccd61e7cfb10075eca59fb1d490068"},
+    {file = "moto-2.2.8.tar.gz", hash = "sha256:418a47e65fd1a0001068d833b3e9924ce881f2e93e8d45b8cbc8bfa26bfeb7e0"},
 ]
 mypy = [
     {file = "mypy-0.901-cp35-cp35m-macosx_10_9_x86_64.whl", hash = "sha256:91211acf1485a1db0b1261bc5f9ed450cba3c0dfd8da0a6680e94827591e34d7"},
