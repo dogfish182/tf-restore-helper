@@ -49,11 +49,12 @@ def setup_logging(level: str, config_file: Optional[str] = None) -> None:
     "--planfile", "-p", required=True, help="A terraform plan file in json format."
 )
 @click.option("--debug", is_flag=True, help="Set debug logging on.")
+@click.option("--logconfig", help="The path to a custom logging config file")
 @click.version_option()
-def main(planfile: str, debug: bool) -> None:
+def main(planfile: str, debug: bool, logconfig: Optional[str] = None) -> None:
     """Constructs terraform commands to run to re-align terraform plans with the state of the cloud."""
     logging_level = "DEBUG" if debug else "INFO"
-    setup_logging(level=logging_level)
+    setup_logging(level=logging_level, config_file=logconfig)
     try:
         with open(planfile, "r") as file:
             plan = file.read()
