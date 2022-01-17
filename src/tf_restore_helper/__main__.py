@@ -39,7 +39,7 @@ def setup_logging(level: str, config_file: Optional[str] = None) -> None:
                 logging.config.dictConfig(configuration)
         except ValueError:
             print(f'File "{config_file}" is not valid json, cannot continue.')
-            raise SystemExit(1)
+            raise SystemExit(1) from ValueError
     else:
         coloredlogs.install(level=level.upper())
 
@@ -49,22 +49,23 @@ def setup_logging(level: str, config_file: Optional[str] = None) -> None:
     "--planfile", "-p", required=True, help="A terraform plan file in json format."
 )
 @click.option("--debug", is_flag=True, help="Set debug logging on.")
+@click.option("--logconfig", help="The path to a custom logging config file")
 @click.version_option()
-def main(planfile: str, debug: bool) -> None:
+def main(planfile: str, debug: bool, logconfig: Optional[str] = None) -> None:
     """Constructs terraform commands to run to re-align terraform plans with the state of the cloud."""
     logging_level = "DEBUG" if debug else "INFO"
-    setup_logging(level=logging_level)
+    setup_logging(level=logging_level, config_file=logconfig)
     try:
         with open(planfile, "r") as file:
             plan = file.read()
     except FileNotFoundError:
         LOGGER.error("Please provide a valid path for a terraform plan file.")
         sys.exit(1)
-        try:
-            json.loads(plan)
-        except json.decoder.JSONDecodeError:
-            LOGGER.error("The terraform plan file supplied is not valid json.")
-            sys.exit(1)
+    try:
+        json.loads(plan)
+    except json.decoder.JSONDecodeError:
+        LOGGER.error("The terraform plan file supplied is not valid json.")
+        sys.exit(1)
     ec2 = get_aws_client("ec2")
     if not ec2:
         LOGGER.error("Ensure you have valid aws credentials before using this tool.")
