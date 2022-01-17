@@ -33,7 +33,7 @@ moto = "^2.0.8"
 werkzeug = "^2.0.2" # specific minimum requirement to pass safety check (moto dependency)
 coverage = {extras = ["toml"], version = "^5.4"}
 safety = "^1.10.3"
-mypy = "^0.901"
+mypy = "^0.931"
 typeguard = "^2.12.1"
 xdoctest = {extras = ["colors"], version = "^0.15.4"}
 sphinx = "^3.5.4"
