@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tf-restore-helper"
-version = "0.1.0"
+version = "0.1.1"
 description = "Tf Restore Helper"
 authors = ["Gary Hawker <dogfish@gmail.com>"]
 license = "MIT"
