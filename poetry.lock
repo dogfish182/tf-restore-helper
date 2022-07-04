@@ -15,17 +15,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "aspy.refactor-imports"
-version = "2.2.0"
-description = "Utilities for refactoring imports in python-like syntax."
-category = "dev"
-optional = false
-python-versions = ">=3.6.1"
-
-[package.dependencies]
-cached-property = "*"
-
-[[package]]
 name = "atomicwrites"
 version = "1.4.0"
 description = "Atomic file writes."
@@ -129,14 +118,6 @@ urllib3 = ">=1.25.4,<1.27"
 crt = ["awscrt (==0.12.5)"]
 
 [[package]]
-name = "cached-property"
-version = "1.5.2"
-description = "A decorator for caching properties in classes."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "certifi"
 version = "2021.10.8"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -173,6 +154,14 @@ python-versions = ">=3.5.0"
 
 [package.extras]
 unicode_backport = ["unicodedata2"]
+
+[[package]]
+name = "classify-imports"
+version = "4.0.2"
+description = "Utilities for refactoring imports in python-like syntax."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "click"
@@ -863,14 +852,14 @@ python-versions = "*"
 
 [[package]]
 name = "reorder-python-imports"
-version = "2.6.0"
+version = "3.3.0"
 description = "Tool for reordering python imports"
 category = "dev"
 optional = false
-python-versions = ">=3.6.1"
+python-versions = ">=3.7"
 
 [package.dependencies]
-"aspy.refactor-imports" = ">=2.1.0"
+classify-imports = "*"
 
 [[package]]
 name = "requests"
@@ -1297,7 +1286,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7.0"
-content-hash = "9f1e0db9b0ad7e9990b388891b55cf7b206b05adf69b6b78b2de3156091696d4"
+content-hash = "5005dcae383577a6a7d49527b306724c5ef61706febf02c9299033ec74edad2c"
 
 [metadata.files]
 alabaster = [
@@ -1307,10 +1296,6 @@ alabaster = [
 appdirs = [
     {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
     {file = "appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"},
-]
-"aspy.refactor-imports" = [
-    {file = "aspy.refactor_imports-2.2.0-py2.py3-none-any.whl", hash = "sha256:7a18039d2e8be6b02b4791ce98891deb46b459b575c52ed35ab818c4eaa0c098"},
-    {file = "aspy.refactor_imports-2.2.0.tar.gz", hash = "sha256:78ca24122963fd258ebfc4a8dc708d23a18040ee39dca8767675821e84e9ea0a"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
@@ -1339,10 +1324,6 @@ boto3 = [
 botocore = [
     {file = "botocore-1.23.45-py3-none-any.whl", hash = "sha256:793a0a4b572bfb157ba17971e4d783766f59c5a0f117407bbeefeb577efa1ed1"},
     {file = "botocore-1.23.45.tar.gz", hash = "sha256:782323846dad22ea814a64bd64b89c7f04550812d3945ce77748b2bac6fe745b"},
-]
-cached-property = [
-    {file = "cached-property-1.5.2.tar.gz", hash = "sha256:9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"},
-    {file = "cached_property-1.5.2-py2.py3-none-any.whl", hash = "sha256:df4f613cf7ad9a588cc381aaf4a512d26265ecebd5eb9e1ba12f1319eb85a6a0"},
 ]
 certifi = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"},
@@ -1407,6 +1388,10 @@ cfgv = [
 charset-normalizer = [
     {file = "charset-normalizer-2.0.10.tar.gz", hash = "sha256:876d180e9d7432c5d1dfd4c5d26b72f099d503e8fcc0feb7532c9289be60fcbd"},
     {file = "charset_normalizer-2.0.10-py3-none-any.whl", hash = "sha256:cb957888737fc0bbcd78e3df769addb41fd1ff8cf950dc9e7ad7793f1bf44455"},
+]
+classify-imports = [
+    {file = "classify_imports-4.0.2-py2.py3-none-any.whl", hash = "sha256:09bbc28481a9f464aca30b054f74243c035324aa93cdf72f56e5fe78412fe52e"},
+    {file = "classify_imports-4.0.2.tar.gz", hash = "sha256:a1880ba36cca1a3e6efc338698685c3c93019c92ecb7cc246636abb42c621e7f"},
 ]
 click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
@@ -1890,8 +1875,8 @@ regex = [
     {file = "regex-2021.11.10.tar.gz", hash = "sha256:f341ee2df0999bfdf7a95e448075effe0db212a59387de1a70690e4acb03d4c6"},
 ]
 reorder-python-imports = [
-    {file = "reorder_python_imports-2.6.0-py2.py3-none-any.whl", hash = "sha256:54a3afd594a3959b10f7eb8b54ef453eb2b5176eb7b01c111cb1893ff9a2c685"},
-    {file = "reorder_python_imports-2.6.0.tar.gz", hash = "sha256:f4dc03142bdb57625e64299aea80e9055ce0f8b719f8f19c217a487c9fa9379e"},
+    {file = "reorder_python_imports-3.3.0-py2.py3-none-any.whl", hash = "sha256:2bb9b6507e9e9d6f691a3eed1309c947327dd7ca0c231a6fd7d87248146d462d"},
+    {file = "reorder_python_imports-3.3.0.tar.gz", hash = "sha256:01fc01665fc51e236f7ef26b080a2134259937dca5ea3aaadac022cb87444f0e"},
 ]
 requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
