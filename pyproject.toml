@@ -31,7 +31,7 @@ flatplan = "~1.3"
 pytest = "^6.2.4"
 moto = "^2.0.8"
 werkzeug = "^2.0.2" # specific minimum requirement to pass safety check (moto dependency)
-coverage = {extras = ["toml"], version = "^6.2"}
+coverage = {extras = ["toml"], version = "^7.1"}
 safety = "^1.10.3"
 mypy = "^0.931"
 typeguard = "^2.12.1"
